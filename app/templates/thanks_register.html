@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Gracias por Registrarse| Ortega/title></title>
+    {% load staticfiles %}
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'ortega/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'ortega/css/bootstrap.css' %}" >
+  
+
+    <!-- Custom styles for this template -->
+      <link rel="stylesheet" type="text/css" href="{% static 'ortega/css/login.css' %}">
+
+   
+  </head>
+
+  <body>
+
+    <div class="container">
+
+        <div class="container">
+
+        
+<div class="panel panel-default">
+  <div class="panel-heading">Gracias</div>
+  <div class="panel-body">
+          
+            <h2> Gracias por registrarte!!! </h2>
+            <center> <h3> Ahora usted podra crear y compartir el problema a resolver contestanto a sus problemas por gente profesional!</h3></center>
+<a href="{% url 'link:vista_login' %}" class="btn btn-primary"> Iniciar Sesion </a>
+  </div>
+</div>
+      
+
+    
+
+    </div> <!-- /container -->
+       <hr/>
+       
+
+  </body>
+</html>

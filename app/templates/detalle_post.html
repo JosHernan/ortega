@@ -1,0 +1,93 @@
+{% extends "index.html" %}
+
+{% block title %} Detalle{% endblock title %}
+
+{% block content %}
+<section id="services" name="services">
+</section>
+</br>
+<div class="panel panel-default">
+  <div class="panel-heading"><strong>Detalle de los casos! actualmente se esta actualizando casos de pruebas test</strong></div>
+  <div class="panel-body">
+    <center><h3><strong>{{ detalle.nombre}}</strong></h3></center>
+    <p align="justify">{{ detalle.descripcion }}</p>
+    <p align="right" >{{ detalle.user}}</p>
+    <p align="right" >{{ detalle.publish}}</p>
+    <p align="right" >Tags</span>
+      {% for cat  in categoria %}
+      <p align="right"><span class="label"><a href="#">{{ cat.nombre }}</a></span></p>
+       {% endfor %}
+
+  </div>
+   <div class="panel-footer"><center><strong>Comentarios</strong></center>
+
+
+{% if user.is_authenticated %}
+<form method="POST" action=".">
+  {% csrf_token %}
+  {{ comment_form }}
+  <br/>
+  <input name='submit'class="btn btn-secondary"  type="submit" value="Comentar" />
+ </form>
+<hr/>
+{% else %}
+<blockquote>
+<p>Necesitas registrarte para comentar y pedir sugerencias</p>
+ <center><strong><h6>Si no cuentas con un usuario Registrate <a href="{% url 'link:vista_registro' %}">Aquí</a> </strong></h6></center>
+</blockquote>
+
+{% endif %}
+
+ 
+{% if user.is_authenticated %}
+{% for comment in comments %}
+
+   <blockquote>
+    <p>{{ comment.content }}</p>
+    <footer>{{ comment.user }}|{{comment.timestamp | timesince}} hace | {% if comment.children.count > 0 %}<span class="badge">{{ comment.children.count }} </span> Comment{% if comment.children.count > 1 %}s{% endif %} | {% endif %} <a class='comment-reply-btn' href='#'>Responder</a></footer>
+  <div class="comment-reply" style="display:none" >
+  {%  for child_comment in comment.children %}
+<blockquote>
+    <p>{{ child_comment.content }}</p>
+    <footer>{{ child_comment.user }}|{{child_comment.timestamp | timesince}} hace </footer>
+</blockquote>
+
+{% endfor %}
+
+
+   <form method="POST" action=".">
+    {% csrf_token %}
+    {{ comment_form }}
+    <input type="hidden" name="parent_id" value="{{ comment.id }}">
+    <input name='submit'class="btn btn-secondary"  type="submit" value="Responder" />
+  </form>
+
+
+</div>
+   </blockquote>
+    
+
+ <hr/>
+{% endfor %}
+{% else %}
+<blockquote>
+<p>Necesitas registrarte para responder a una sugerencia</p>
+ <center><strong><h6>Si no cuentas con un usuario Registrate <a href="{% url 'link:vista_registro' %}">Aquí</a> </strong></h6></center>
+</blockquote>
+
+{% endif %}
+
+{% if error_message %}
+ <p><strong> {{ error_message }}</strong></p>
+
+{% endif %}
+
+</br>
+
+
+   </div>
+</div>
+
+{% endblock %}
+
+

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+  {% block title %}  <title>Iniciar Sesion | Ortega</title>{% endblock %}
+      {% load staticfiles %}
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'ortega/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'ortega/css/bootstrap.css' %}" >
+  
+
+    <!-- Custom styles for this template -->
+      <link rel="stylesheet" type="text/css" href="{% static 'ortega/css/login.css' %}" >
+
+   
+  </head>
+
+  <body>
+{% block content %}
+    <div class="container">
+
+        <div class="container">
+
+        
+
+        <div class="row">
+            
+            <div class=" col-md-12 text-center">
+                 <h1 class="text-center"><strong>Comienza Ahora!</strong>,</h1>
+                 <h1 class="text-center"><strong>es gratis Let's go</strong></h1>
+                <p>&nbsp;</p>
+
+                <div class="col-md-push-3 col-md-6 text-center">
+                     <p class="text-center">Descubre como Asesoria Ortega puede ayudarte a resolver tus problemas!:</p>
+                    <form action="." method="POST">
+                        {% csrf_token %}
+                         {{form.as_p}}
+                          {% if next %}
+        <input type="hidden" value="{{next}}" name="next">
+    {% else %}
+        <input type="hidden" value="/" name="next">
+    {% endif %}
+ 
+
+
+    <button class="btn btn-success btn-lg btn-block" type="submit"> Log in </button>
+    <center><strong><h6>Si no cuentas con un usuario Registrate <a href="{% url 'link:vista_registro' %}">Aquí</a> </strong></h6></center>
+     <a href="#" class="btn btn-primary btn-lg btn-block">Iniciar sesion con Facebook</a>
+
+    <div align="right">
+      <center><strong><h6><a href="{% url 'link:inicio'%}">Inicio</a> </strong></center></h6>
+    </div>
+
+                    </form>
+                </div><!-- col-md-6 -->
+
+            </div><!-- col-md-12 -->
+
+        </div><!-- /row -->
+
+    </div><!-- /container -->
+
+
+
+
+    </div> <!-- /container -->
+       <hr/>
+       
+{% endblock %}
+  </body>
+</html>

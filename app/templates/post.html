@@ -1,0 +1,38 @@
+{% extends "index.html" %}
+
+{% block title %}Post de Casos{% endblock title %}
+
+{% block content %}
+<section id="services" name="services">
+
+</section>	
+		
+</br>
+<div class="alert alert-info" role="alert">Listado de los casos Ganados y sus testimonios !!..</div>
+</br>
+ <div class="list-group">
+  <a href="#" class="list-group-item active">
+   <center>Casos Ganados!</center>
+  </a>
+    {% if casos%}
+    {% for articulos in casos%}
+  <center><a href="{% url 'link:detail' articulos.id %}" class="list-group-item">{{articulos.nombre}}</a></center>
+    {% endfor %}
+    {% else %}
+      <p> No hay casos. </p>
+      {% endif %}
+</div>
+<nav>
+  <ul class="pager">
+     {% if casos.has_previous %}
+    <li class="previous"><a href="?page={{ casos.previous_page_number }}"><span aria-hidden="true">&larr;</span> Older</a></li>
+    {% endif %}
+      {% if casos.has_next %}
+    <li class="next"><a href="?page={{ casos.next_page_number }}">Newer <span aria-hidden="true">&rarr;</span></a></li>
+     {% endif %}
+  </ul>
+</nav>
+
+{% endblock %}
+
+

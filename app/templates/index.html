@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="assets/ico/favicon.ico">
+
+    <title>Despacho Juridico Ortega</title>
+    {% load staticfiles %}
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'ortega/css/bootstrap.css' %}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'ortega/css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'ortega/css/animate.css' %}" rel="stylesheet">
+     <link href="{% static 'ortega/css/doc.css' %}" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <link href="{% static 'ortega/js/fancybox/jquery.fancybox.css' %}" rel="stylesheet" />
+
+    
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+   
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  </head>
+
+  <body data-spy="scroll" data-offset="0" data-target="#theMenu">
+		
+	<!-- Menu -->
+	<nav class="menu" id="theMenu">
+		<div class="menu-wrap">
+			<h1 class="logo"><a href="{% url 'link:inicio'%}">Asesoria Legal Ortega</a></h1>
+			<i class="fa fa-times menu-close"></i>
+			<a href="#home" class="smoothScroll">Inicio</a>
+			<a href="#about" class="smoothScroll">Biografia</a>
+			<a href="#services" class="smoothScroll">Servicios</a>
+			<a href="#contact" class="smoothScroll">Contacto</a>
+			<a href="{% url 'link:casos'%}">Casos Ganados</a>
+		  {% if user.is_authenticated %}
+           <a href=" {% url 'link:vista_logout' %} ">Cerrar sesion</a>
+          {% else  %}
+             <a href="{% url 'link:vista_login' %} ">Iniciar Sesion</a>
+          {% endif %}
+			
+			<a href="#"><i class="fa fa-facebook"></i></a>
+			<a href="#"><i class="fa fa-twitter"></i></a>
+			<a href="#"><i class="fa fa-dribbble"></i></a>
+			<a href="#"><i class="fa fa-envelope"></i></a>
+		</div>
+		
+		<!-- Menu button -->
+		<div id="menuToggle"><i class="fa fa-bars"></i></div>
+	</nav>
+
+	<section id="home" name="home"></section>
+	<div id="headerwrap">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3">
+					<h1>Asesoria Legal Ortega</h1>
+				</div>
+			</div><! --/row -->
+		</div><! --/container -->
+	</div><! --/headerwrap -->
+	
+	<section id="about" name="about"></section>
+	<div id="aboutwrap">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4 name">
+					<img class="img-responsive" src="{% static 'ortega/img/cesar.jpg' %}">
+					<p>LIC. Cesar Felipe Ortega Hernandez</p>
+					<div class="name-label"></div>
+				</div><! --/col-lg-4-->
+				<div class="col-lg-8 name-desc">
+					<h2>LICENCIATURA EN DERECHO<br/>UNIVERSIDAD AUTONOMA DE TAMAULIPAS </h2>
+					<div class="name-zig"></div>
+					
+					<div class="col-md-6">
+						<p align="justify"> <strong>2009-2011:</strong> Pasante en Derecho, Bufete Juridico Gratuito de la U.A.T Edicifio de la Procuradoria General de justicia, Fraccionamiento el Naranjal, Tampico Tamaulipas.</p>
+					</div>
+					<div class="col-md-6">
+						<p align="justify"> <strong>2011-2012:</strong> Pasante en Derecho, Derecho Juridico, Lic. Yolanda Gabriela Piñones Moreno, Calle Necaxa numero 203 sur Colonia Primero de Mayo en Ciudad Madero Tamaulipas.</p>
+					</div>
+					<div class="col-md-6">
+						<p align="justify"> <strong>2012-Actualidad:</strong>Abogado Particular Despacho Juridico ubicado en Avenida Las torres esquina con Calle Miguel Siordia, Numero 248 interior, Colonia Delfino Reséndiz Ciudad Madero Tamaulipas.</p>
+						
+					</div>
+					<div class="col-md-6">
+						<p align="justify"><strong>Enero 2014-Junio 2014:</strong>Catedratico de las siguientes asignaturas:
+                        <li>Filosofia</li>
+                        <li>Estructura Socioeconimica de México</li>
+                        <li>Derecho Vigente</li>
+                        En la preparatoria Benito Juarez,ubicada en la calle Duas Miron numero 306 colonia Felipe Carrillo Puerto de Ciudad Madero Tamaulipas.
+                        
+
+						</p>
+						
+					</div>
+					<div class="col-md-6">
+						<p align="justify"><strong>Experiencia:</strong>En las diversas areas del derecho como son:
+                        <li>Laboral</li>
+                        <li>Civil</li>
+                        <li>Familiar</li>
+                        <li>Penal</li>
+                        <li>Mercantil</li>
+                        <li>Agrario</li>
+                        Presentacion de escritos y demandas en diferentes dependencias, seguimiento de los expedientes en sus respectivas dependencias hasta su culminacion, tramitacion de amparos, comparecencia en audiencias, asesoria legal de manera profesional.
+                        
+
+						</p>
+					
+					</div>
+
+						<div class="col-md-6">
+							<p align="center"><strong>Diplomados</strong></p>
+						<p align="justify">
+						11 de abril del 2008 Diploma otorgado por haber asistido al Seminario de Actualizacion Juridica <strong>"Avances y Perspectivas del Escenario Juridico"</strong> impartido por la Universidad Autonoma de Tamaulipas.
+						
+                     
+						</p>
+						<p align="justify">
+							Culminacion del Diplomado que se efectuo del 7 de Marzo del 2009 al 13 de Junio del 2009, con valor curricular de 60 horas de la <strong>"Criminalista en la Averiguacion Previa: de la teoria a la pratica"</strong> expedida por la unidad Academica de ciencias Juridicas y Sociales, Universidad Autonoma de Tamaulipas.
+						</p>
+						<p align="justify">
+							Constancia por la participacion en el seminario de Desarrollo Profesional Denominado <strong>"Introduccion al Derecho Angloamericano y la Oralidad Judicial"</strong> expedida por la unidad de Ciencias Juridicas y Sociales, Universidad Autonoma de Tamaulipas el 22 y 23 de Octubre del 2010.
+						</p>
+						<p align="justify">
+							Constancia de asistencia de  <strong>"Suspencion y causales de improcedencia en el nuevo juicio de amparo"</strong> la cual se llevo a cabo el dia 25 de octubre del año 2014 en la ciudad de Tampico, Tamaulipas organizada por la casa de la cultura juridica <strong>"Ministro Fernando de la Fuente Sanders"</strong> en ciudad Victoria Tamaulipas.
+						</p>
+					</div>
+					
+					
+				</div><! --/col-lg-8-->
+		
+			</div><!-- /row -->
+		</div><!-- /container -->
+	</div><!-- /aboutwrap -->
+	
+	<! -- ABOUT SEPARATOR -->
+	<div class="sep about" data-stellar-background-ratio="0.5"></div>
+	
+
+	
+	
+	<! -- SERVICE SECTION -->
+
+	<section id="services" name="services"></section>
+	{% block content %}
+	<div id="servicewrap">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8-offset-2 centered">
+					<h1>SERVICIOS</h1>
+					<h3>Servicios de las diversas areas del Derecho</h3>
+					
+				</div><!-- /col-lg-8 -->
+			</div><! --/row -->
+		
+			<div class="row mt">
+				<div class="col-lg-3 service">
+					
+					<i class="fa fa-star"></i><p>DERECHO<br/><small>LABORAL</small></p>
+					<p align="justify" class="text">Establecer y organizar todas las circunstancias, fenómenos y situaciones que se puedan dar en tal ámbito a fin de que la actividad en cuestión pueda desarrollarse de manera segura y apropiada para las dos partes que participan en ella.</p>
+				
+				</div>
+				<div class="col-lg-3 service">
+					<i class="fa fa-cloud"></i><p>DERECHO<br/><small>CIVIL</small></p>
+					<p align="justify" class="text">Conjunto de normas jurídicas y principios del Derecho que regulan las relaciones personales o patrimoniales, voluntarias o forzosas, entre personas privadas o públicas, tanto físicas como jurídicas, de carácter privado y público.</p>
+				</div>
+				<div class="col-lg-3 service">
+					<i class="fa fa-users"></i><p>DERECHO<br/><small>FAMILIAR</small></p>
+					<p align="justify" class="text">Conjunto de normas e instituciones jurídicas que regulan las relaciones personales y patrimoniales de los miembros que integran la familia, entre sí y respecto de terceros.</p>
+				</div>
+				<div class="col-lg-3 service">
+					<i class="fa fa-pencil"></i><p>DERECHO<br/><small>PENAL</small></p>
+					<p align="justify" class="text">Regula la potestad punitiva del Estado, asociando a hechos, estrictamente determinados por la ley, como presupuesto, una pena, medida de seguridad o corrección como consecuencia.</p>
+				</div>
+			</div><! --/row -->
+			
+			<div class="row mt">
+				<div class="col-lg-3 service">
+					<i class="fa fa-trophy"></i><p>DERECHO<br/><small>MERCANTIL</small></p>
+					<p align="justify" class="text"> Regula el conjunto de normas relativas a los comerciantes en el ejercicio de su profesión, a los actos de comercio legalmente calificados como tales y a las relaciones jurídicas derivadas de la realización de estos.</p>
+				</div>	
+				<div class="col-lg-3 service">
+					<i class="fa fa-globe"></i><p>DERECHO<br/><small>AGRARIO</small></p>
+					<p align="justify" class="text"> Rama de los derechos sociales que constituye el orden jurídico que regula los problemas de la tenencia de la tierra, así como sus diversas formas de propiedad y la actividad agraria que se realiza sobre ella.</p>
+				</div>
+				<div class="col-lg-3 service">
+					<i class="fa fa-lock"></i><p>PRESENTACION<br/><small>ESCRITOS</small></p>
+					
+				</div>
+				<div class="col-lg-3 service">
+					<i class="fa fa-thumbs-up"></i><p>DEMANDAS<br/><small>DIFERENTES DEPENDENCIAS</small></p>
+					
+				</div>
+			</div><! --/row -->
+			
+		</div><! --/container -->
+	</div><! --/servicewrap -->
+		{% endblock %}
+	<div id="testimonials">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2 mt">
+				
+					<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+					  <!-- Wrapper for slides -->
+					  <div class="carousel-inner">
+					  	
+					    <div class="item active mb centered">
+					      <h3>MARK WEBBER</h3>
+					      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+					      <p><img class="img-circle" src="{% static 'ortega/img/pic-t1.jpg' %}" width="80"></p>
+					    </div>
+
+					    <div class="item mb centered">
+					      <h3>PAUL LEVINGSTON</h3>
+					      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+					      <p><img class="img-circle" src="{% static 'ortega/img/pic-t2.jpg' %}" width="80"></p>
+					    </div>
+
+					    <div class="item mb centered">
+					      <h3>LUCY LENNIN</h3>
+					      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+					      <p><img class="img-circle" src="{% static 'ortega/img/pic-t3.jpg' %}" width="80"></p>
+					    </div>
+
+					  </div>
+					  <!-- Indicators -->
+					  <ol class="carousel-indicators">
+					    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+					    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+					    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+					  </ol>
+					</div>
+					  
+				</div><! --/col-lg-8 -->
+			</div><! --/row -->
+		</div><! --/container -->
+	</div><! --/testimonials -->
+	
+	<! -- SERVICE SECTION -->
+	<section id="contact" name="contact"></section>
+	<! -- CONTACT SEPARATOR -->
+	<div class="sep contact" data-stellar-background-ratio="0.5"></div>
+	<div id="contactwrap">
+	<footer class="footer">
+      <div class="container">
+          <div class="row">
+                    
+                    <div class="col-md-4">
+                        
+                        <div class="menu-item ">
+                            <a href="#" data-toggle="modal" target="_blank">
+                                <i class="fa fa-linkedin"></i>
+                                <p>LinkedIn</p>
+                            </a>
+                        </div>
+                        
+                        
+                     
+                        
+                    </div>
+                    <div class="col-md-4">
+                    	<div class="menu-item ">
+                            <a href="#" data-toggle="modal" target="_blank">
+                                <i class="fa fa-facebook"></i>
+                                <p>Facebook</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+
+                        <div class="menu-item github">
+                            <a href="#" data-toggle="modal" target="_blank">
+                                <i class="fa fa-twitter"></i>
+                                <p>Twitter</p>
+                            </a>
+                        </div>
+                    </div>
+
+
+      </div>
+    </footer>
+   </div>
+
+	
+	
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script src="{% static 'ortega/js/classie.js' %}"></script>
+    <script src="{% static 'ortega/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'ortega/js/smoothscroll.js' %}"></script>
+	<script src="{% static 'ortega/js/jquery.stellar.min.js' %}"></script>
+	<script src="{% static 'ortega/js/fancybox/jquery.fancybox.js' %}"></script>    
+	<script src="{% static 'ortega/js/main.js' %}"></script>
+	 <script   src="http://code.jquery.com/jquery-1.12.3.min.js"   integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ="   crossorigin="anonymous"></script>
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.5/marked.min.js"></script>
+		<script>
+		$(function(){
+			$.stellar({
+				horizontalScrolling: false,
+				verticalOffset: 40
+			});
+		});
+		</script>
+		
+		<script type="text/javascript">
+      $(function() {
+        //    fancybox
+          jQuery(".fancybox").fancybox();
+      });
+	   </script>
+
+	   <script type="text/javascript">
+$(document).ready(function(){
+    $(".content-markdown").each(function(){
+            var content = $(this).text()
+            console.log(content)
+            var markedContent = marked(content)
+            console.log(markedContent)
+            $(this).html(markedContent)
+    })
+    $(".content-markdown img").each(function(){
+        $(this).addClass("img-responsive")
+            
+    })
+})
+
+ $(".comment-reply-btn").click(function(event){
+        event.preventDefault();
+        $(this).parent().next(".comment-reply").fadeToggle();
+    })
+
+</script>
+
+  </body>
+</html>
